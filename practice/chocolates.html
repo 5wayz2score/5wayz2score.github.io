@@ -1,0 +1,183 @@
+<html>
+    <head> 
+<style>
+body{
+    background: linear-gradient(45deg, red, blue);
+    height: 100vh;
+
+}
+h1{
+    text-align: center;
+    font-family:Luminari, fantasy;
+    color: black;
+
+}       
+.container{
+    display: grid;
+    width:80vw;
+    height:80vh;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: MediumSlateBlue;
+    padding: 10px;
+    border-radius: 20px;
+    border: 8px solid black;
+}
+                       .heart {
+              height: 20vh; /* adjust to control the size */
+              aspect-ratio: 1;
+              --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+              -webkit-mask-box-image: var(--_m);
+                         mask-border: var(--_m);
+              clip-path: polygon(-41% 0,50% 91%, 141% 0);
+              background-color: chocolate;
+              margin: auto;
+            }
+            /* fallback until better support for mask-border */
+            @supports not (-webkit-mask-box-image: var(--_m)) { 
+              .heart {
+                mask:
+                 radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+                 radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+                 conic-gradient(#000 0 0) bottom/100% 50% no-repeat;
+              }
+            }
+            #chocolateheart{
+                grid-column-start: 3;
+                grid-row-start:2;
+            }
+            .lilbits{
+                grid-column-start: 1;
+                grid-row-start: 1;
+                display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+            }
+            #mnm{
+                grid-column-start:1;
+                grid-row-start:1;
+                width:10vh;
+                height:10vh;
+                background-color:red;
+                border-radius:50%;
+                margin: auto;
+                display: grid;
+                place-items: center;
+                font-size: 2em;
+            }
+            .lollipop{
+                grid-column:2;
+                grid-row:1;
+                margin:auto;
+                width:7vh;
+                height:7vh;
+                background:radial-gradient(circle, pink 30%, red 65%, white 70%);
+                border-radius:50%;
+                position:relative;
+            }
+
+            .lollipop::after{
+                content:"";
+                position:absolute;
+                width:8px;
+                height:12vh;
+                background:white;
+                top:90%;
+                left:45%;
+            }
+            .gummy{
+                grid-column:1;
+                grid-row:2;
+                margin:auto;
+                width:7vh;
+                height:9vh;
+                background-color:limegreen;
+                border-radius:45% 45% 35% 35%;
+            }
+            .peppermint{
+                grid-column:2;
+                grid-row:3;
+                margin:auto;
+                width:9vh;
+                height:9vh;
+                border-radius:50%;
+                background:repeating-conic-gradient(
+                    white 0deg 30deg, red 30deg 60deg);
+                border: 3px solid white;
+            }
+            .wrapped{
+                grid-column:1;
+                grid-row:3;
+                margin:auto;
+                width:10vh;
+                height:6vh;
+                background:linear-gradient(
+                    90deg,orange,yellow,orange);
+                clip-path:polygon(
+                    0 0, 25% 20%, 75% 20%, 100% 0, 85% 50%, 100% 100%, 75% 80%, 25% 80%, 0 100%, 15% 100%);
+            }
+            .chocolate{
+                grid-column:2;
+                grid-row:5;
+                margin:auto;
+                width:10vh;
+                height:15vh;
+                background-color:saddlebrown;
+                border:3px solid #4b2410;
+                place-items:center;
+                font-size:2em;
+
+            }
+            .bluecandy{
+                grid-column:5;
+                grid-row:1;
+                margin:auto;
+                width:9vh;
+                height:9vh;
+                background-color:deepskyblue;
+                border-radius:50%;
+                place-items:center;
+                font-size:2em;
+            }
+            .jellybean{
+                grid-column:4;
+                grid-row:4;
+                margin:auto;
+                width:11vh;
+                height:6vh;
+                background-color:purple;
+                border-radius:50%;
+                transform:rotate(-30deg);
+            }
+
+
+
+</style>
+ </head>
+    <body>
+        <h1>These are MY chocolates</h1>
+        <div class="container">
+
+    <div id="mnm">m</div>
+
+    <div class="lollipop"></div>
+
+    <div class="bluecandy">s</div>
+
+    <div class="gummy"></div>
+
+    <div class="peppermint"></div>
+
+    <div class="heart" id="chocolateheart"></div>
+
+    <div class="wrapped"></div>
+
+    <div class="chocolate">Hershey's</div>
+
+    <div class="jellybean"></div>
+
+</div>
+
+</body>
+</html>
